@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>yourpage</title>
+  </head>
+  <body>
+<h1>{{ you[0][2] }}님 환영합니다!</h1>
+<br>
+<h2>교회 소개</h2>
+<table border='1'>
+  <thead>
+    <th>교회 이름</th><th>위치</th><th>교파</th><th>교회설명</th>
+  </thead>
+  <tbody>
+    <tr>
+      {% for chur in church[0][:4] %}
+      <td>{{chur}}</td>
+      {% endfor %}
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<table border='1'>
+  <thead>
+    <th>청년부</th><th>전체 성도</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{population[0][0]}}</td><td>{{all[0][0]}}</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<ul>
+  <li><form action="/checking" method="post">
+    <input type="hidden" name="ID" value="{{you[0][0]}}">
+    <input type="submit" value="영성생활보고">
+  </form></li>
+  <li><form action="/fine" method="post">
+    <input type="hidden" name="ID" value="{{you[0][0]}}">
+    <input type="submit" value="벌금 확인">
+  </form></li>
+  <li><a href='/'>로그아웃</li>
+  <li><a href='/yourpage/{{you[0][0]}}'>첫 화면으로</a></li>
+  <br>
+  <li><form action="/resign" method="post">
+    <input type="hidden" name="ID" value="{{you[0][0]}}">
+    <input type="submit" value="탈퇴">
+  </form></li>
+</ul>
+
+  </body>
+</html>

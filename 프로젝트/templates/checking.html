@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>checking</title>
+  </head>
+  <body>
+    <h1>영성생활 보고 - 날짜</h1>
+    <form action="/post" method="post">
+      <div class="date">날짜를 선택하세요</div>
+      <input type="hidden" name="ID" value="{{ ID }}">
+      <input type="date" name="date">
+      <input type="submit" value="검색">
+    </form>
+
+    <ul>
+      <li><a href='/yourpage/{{ID}}'>첫 화면으로</a></li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Fine</title>
+  </head>
+  <body>
+<h1>벌금</h1>
+<div class="now">
+  현재 납부해야 하는 금액 : {{penalty}}원
+</div>
+<br><br>
+<div class="payed">
+  납부하신 금액
+<form action="/payed" method="post">
+  <input type="hidden" name="ID" value="{{ID}}">
+  <input type="number" name="payed_tax">
+  <input type="hidden" name="now_payed" value="{{penalty}}">
+  <input type="submit" name="납부">
+</form>
+</div>
+<br>
+<div class="max_tax">
+  직분별 최고 벌금 소유자
+<table border='1'>
+  <thead>
+    <th>직분</th><th>이름</th><th>벌금</th>
+  </thead>
+  <tbody>
+    {% for name in names %}
+    <tr>
+      <td>{{name[0]}}</td>
+      <td>{{name[1]}}</td>
+      <td>{{name[2]}}</td>
+    </tr>
+      {% endfor %}
+  </tbody>
+</table>
+</div>
+<div class="account">
+  계좌
+  <table border='1'>
+    <thead>
+      <th>목적</th><th>계좌</th>
+    </thead>
+    <tbody>
+      {% for accounts in account %}
+      <tr>
+        <td>{{accounts[1]}}</td>
+        <td>{{accounts[2]}}</td>
+      </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+</div>
+<ul>
+  <li><a href='/yourpage/{{ID}}'>첫 화면으로</a></li>
+</ul>
+  </body>
+</html>

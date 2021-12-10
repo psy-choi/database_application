@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>영성생활 보고</h1>
+    <form action='/checking_update' method='post'>
+      <input type="hidden" name="ID" value="{{ID}}">
+      <input type="hidden" name="date" value="{{date}}">
+      <div class="pray_times">오늘 기도한 시간(분)</div>
+      <input type="number" name="pray_times">
+      <div class="pages">오늘 읽은 성경 말씀(장)</div>
+      <input type="number" name="read_pages">
+      <div class="QT">QT</div>
+      <input type="radio" id="O" name="QT" value="O">
+      <label for="O">O</label><br>
+      <input type="radio" id="X" name="QT" value="X">
+      <label for="X">X</label><br>
+      <input type="submit" value="제출">
+    </form>
+
+    <ul>
+      <li><a href='/yourpage/{{ID}}'>첫 화면으로</a></li>
+    </ul>
+  </body>
+</html>

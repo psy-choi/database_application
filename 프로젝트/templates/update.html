@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>{{person[0][2]}}의 영성생활</h1>
+    <table border='1'>
+      <thead>
+        <th>날짜</th><th>기도</th><th>말씀</th><th>큐티</th><th>벌금</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{take[0][3]}}</td><td>{{take[0][4]}}분</td><td>{{take[0][5]}}장</td><td>{{take[0][6]}}</td><td>{{take[0][7]}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <form action="/update_update" method="post">
+      <input type="hidden" name="ID" value="{{take[0][0]}}">
+      <input type="hidden" name="date" value="{{take[0][3]}}">
+      <input type="submit" value="수정">
+    </form>
+    <ul>
+      <li><a href='/yourpage/{{take[0][0]}}'>첫 화면으로</a></li>
+    </ul>
+  </body>
+</html>
